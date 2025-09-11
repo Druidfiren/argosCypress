@@ -2,14 +2,14 @@ describe("VGR schválí a přidá komentář", () => {
   it("should fill form and submit successfully", () => {
     cy.visit("https://argos.appnificent.cz/");
 
-    // Zachytíme POST request na submit formuláře
+    // Zachytíme GET request na submit formuláře
     cy.intercept("GET", "**/approvals").as("submitIntent");
 
     // Zvolíme 'Mé výzkumné záměry'
     cy.contains("Moje schválení").click();
 
     // Klikneme na přidat
-    cy.contains(".text-h6", "Test Název") // najde element s názvem záznamu
+    cy.contains(".text-h6", "Centrum Žadatele") // možnosti: Centrum Žadatele, Více Center, MS Base, MS Base - Retrospektivní, MS Base - Prospektivní, MS Base s finanční podporou
       .closest(".q-card") // najde nejbližší kartu, která obsahuje celý záznam
       .within(() => {
         // omezíme scope na tuto kartu

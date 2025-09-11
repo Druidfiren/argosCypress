@@ -12,8 +12,8 @@ describe("Vytvoření výzkumného záměru", () => {
     cy.contains("button", "Přidat").click();
 
     // Vyplníme všechna 4 pole
-    cy.get('input[aria-label="Název *"]').type("Test Název");
-    cy.get('textarea[aria-label="Popis *"]').type("Test Popis");
+    cy.get('input[aria-label="Název *"]').type("Centrum Žadatele");
+    cy.get('textarea[aria-label="Popis *"]').type("Automatický test pro centrum žadatele");
     cy.get('input[aria-label="Rozsah dat *"]').click();
     cy.get(".q-menu .q-item").first().click();
     cy.get('input[type="file"]').attachFile("test_reseni_cz.pdf");
