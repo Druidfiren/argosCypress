@@ -10,7 +10,7 @@ describe("VGR schválí a přidá komentář", () => {
     cy.contains("Moje schválení").click();
 
     // Klikneme na přidat
-      cy.contains(".text-h6", "Centrum Žadatele")
+      cy.contains(".text-h6", "Více center")
         .closest(".q-card")
         .within(() => {
           // omezíme scope na tuto kartu
